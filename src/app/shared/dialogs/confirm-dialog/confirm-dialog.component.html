@@ -1,0 +1,16 @@
+<div class="px-5 py-3">
+
+    <div class="flex justify-end">
+        <mat-icon class="cursor-pointer" (click)="dialogRef.close(false)">close</mat-icon>
+    </div>
+
+    <div class="mt-5">
+        <p class="text-[16px]">Are you sure You want Delete</p>
+
+        <div class="flex gap-3 justify-end mt-5">
+            <button class="border border-black py-2 px-4 rounded-[8px]" (click)="dialogRef.close(true)">Yes</button>
+            <button class="border border-black py-2 px-4 rounded-[8px]" (click)="dialogRef.close(false)">No</button>
+        </div>
+    </div>
+
+</div>

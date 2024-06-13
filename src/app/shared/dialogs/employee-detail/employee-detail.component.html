@@ -1,0 +1,24 @@
+<div class="px-5 py-3">
+
+    <div class="flex justify-between items-center gap-3">
+        <h2 class="mb-[0px!important]">Employee Details</h2>
+        <mat-icon class="cursor-pointer" (click)="dialogRef.close(false)">close</mat-icon>
+    </div>
+
+    <div class="mt-5">
+        <div>
+            <h4>Name: <span>{{dialogData.employeeDetail.employee_name}}</span></h4>
+        </div>
+
+        <div>
+            <h4>Salary: <span>{{dialogData.employeeDetail.employee_salary}}</span></h4>
+   
+        </div>
+
+        <div>
+            <h4>Age: <span>{{dialogData.employeeDetail.employee_age}}</span></h4>
+          
+        </div>
+    </div>
+
+</div>

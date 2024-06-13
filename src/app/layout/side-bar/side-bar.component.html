@@ -1,0 +1,29 @@
+<mat-card class="h-[100%]">
+    <mat-card-content>
+        <div >
+            <div class="flex justify-center items-center">
+                <img src="assets/logo/angular-logo.png" alt="" class="w-[80px]">
+            </div>
+
+            <div class="mt-5">
+                <div *ngFor="let nav of navigationList" [routerLink]="nav.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <div class="flex gap-2 py-5 cursor-pointer" >
+                        <mat-icon>
+                            <span>
+                                {{nav.icon}}
+                            </span>
+                        </mat-icon>
+                        
+                        <p class="font-semibold">{{nav.title}}</p>
+                    </div>
+
+                </div>
+                
+            </div>
+        
+        </div>
+    </mat-card-content>
+    
+</mat-card>
+
+

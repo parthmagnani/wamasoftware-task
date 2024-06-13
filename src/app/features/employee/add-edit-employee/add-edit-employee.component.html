@@ -1,0 +1,80 @@
+<div>
+
+    <div class="flex items-center gap-3">
+        <mat-icon class="cursor-pointer" routerLink="/employee">arrow_back</mat-icon>
+        <h1 class="mb-[0px!important]">{{employeeId ? 'Edit' : 'Add'}} Employee</h1>
+        <!-- <button class="border border-black py-2 px-4 rounded-[8px]" routerLink="/addEditParty">Add Party</button> -->
+    </div>
+
+    <div class="mt-5">
+        <mat-card>
+            <mat-card-content>
+                <div>
+                    <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+
+                        <div class="grid grid-cols-3 gap-5">
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput 
+                                    type="text" 
+                                    formControlName="employee_name"
+                                    placeholder="Please Enter Name">
+                                </mat-form-field>
+        
+                                <div class="h-2">
+                                    <small *ngIf="this.employeeForm.get('employee_name')?.errors && this.employeeForm.get('employee_name')?.touched"
+                                    class="text-[#ff000088]">*Employee name is required</small>
+                                </div>
+                                
+                            </div>
+
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Salary</mat-label>
+                                    <input matInput 
+                                    type="number" 
+                                    formControlName="employee_salary"
+                                    placeholder="Please Enter Salary"
+                                    min="10000">
+                                </mat-form-field>
+        
+                                <div class="h-2">
+                                    <small class="text-[red] font-normal" *ngIf="this.employeeForm.get('employee_salary')?.errors?.['required'] && this.employeeForm.get('employee_salary')?.touched">Salary is required</small>
+                                    <small class="text-[red] font-normal" *ngIf="(this.employeeForm.get('employee_salary')?.errors?.['min']) && this.employeeForm.get('employee_salary')?.touched">min value: 10000 </small>
+                                </div>
+                            </div>
+
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Age</mat-label>
+                                    <input matInput 
+                                    type="number" 
+                                    formControlName="employee_age"
+                                    placeholder="Please Enter Age"
+                                    min="18">
+                                </mat-form-field>
+        
+                                <div class="h-2">
+                                    <small class="text-[red] font-normal" *ngIf="this.employeeForm.get('employee_age')?.errors?.['required'] && this.employeeForm.get('employee_age')?.touched">Salary is required</small>
+                                    <small class="text-[red] font-normal" *ngIf="(this.employeeForm.get('employee_age')?.errors?.['min']) && this.employeeForm.get('employee_age')?.touched">min age: 18 </small>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    
+                        <div class="flex justify-center">
+                            <button type="submit" 
+                            class="border border-[#444] rounded-[8px] py-2 px-3 mt-4" 
+                            [ngClass]="employeeForm.invalid ? 'cursor-not-allowed' : 'cursor-pointer' "
+                            [disabled]="employeeForm.invalid">{{employeeId ? 'Edit' : 'Add'}} Details</button>
+                        </div>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+

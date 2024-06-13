@@ -1,0 +1,14 @@
+<div class="grid grid-cols-8  bg-[#f9fafb]">
+    <div class=" col-span-2 hidden md:block">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="col-span-8 md:col-span-6">
+        <div>
+            <app-header></app-header>
+            <div class="min-h-[calc(100vh-126px)] px-4 py-6">
+                <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+  </div>

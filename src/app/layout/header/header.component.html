@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-content>
+      <div class="flex md:justify-end justify-between items-center">
+        <div class="md:hidden">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+          <!-- <button mat-icon-button (click)="toggle()"> -->
+            <mat-icon>menu</mat-icon>
+          </button>
+  
+          <mat-menu #menu="matMenu">
+            <div *ngFor="let nav of navigationList" [routerLink]="nav.path">
+              <button mat-menu-item>
+                <div class="flex gap-2 py-5 cursor-pointer"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                  <mat-icon   routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      <span>
+                          {{nav.icon}}
+                      </span>
+                  </mat-icon>
+                  
+                  <p class="font-semibold">{{nav.title}}</p>
+              </div>
+              </button>
+              
+  
+          </div>
+           
+          </mat-menu>
+        
+          
+        </div>
+  
+        <div>
+          <mat-icon
+            style="font-size: 36px; width: 36px; height: 36px"
+            class="cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> account_circle </span>
+          </mat-icon>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
